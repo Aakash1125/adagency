@@ -10,10 +10,12 @@
     "express": "^4"
   },
   "devDependencies": {
+    "@sap/ux-specification": "^1.90.9",
     "sqlite3": "^5.0.2"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "cds run",
+    "watch-adagency": "cds watch --open adagency/webapp/index.html#fe-lrop-v4"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -50,5 +52,8 @@
         }
       }
     }
-  }
+  },
+  "sapux": [
+    "app/adagency"
+  ]
 }

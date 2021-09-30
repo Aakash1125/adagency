@@ -13,6 +13,10 @@ annotate AdDetailService.AdDetails with @(
                 Value : ID
             },
             {
+                Value: userID,
+                Label: 'User Id'
+            },
+            {
                 $Type : 'UI.DataField',
                 Value : title
             },
@@ -60,6 +64,13 @@ annotate AdDetailService.AdDetails with @(
     },
 
 );
+
+annotate AdDetailService.AdDetails with 
+{
+    @UI.MultiLineText
+    textContent
+};
+
 
 annotate AdDetailService.AdDetails.image with {
     @UI.IsImageUrl : true
