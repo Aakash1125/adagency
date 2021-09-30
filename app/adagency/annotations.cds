@@ -1,1 +1,0 @@
-using AdDetailService as service from '../../srv/adDetail-service';
