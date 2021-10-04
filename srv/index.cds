@@ -1,9 +1,9 @@
-using from './adagency-paymentplan';
+//using from './adagency-paymentplan';
 using from './adagency-service';
 using from '@sap/cds/common';
 
-
-annotate PaymentPlanServices.PaymentPlanDetails with @( 
+annotate AdAgencyServices.PaymentPlanDetails with @odata.draft.enabled;
+annotate AdAgencyServices.PaymentPlanDetails with @( 
     Common.SemanticKey: [],
 
 UI:{
@@ -16,13 +16,6 @@ UI:{
         {Value: preferenceCost},
         {Value: startDate},
         {Value: endDate},
-        //{Value: stock, Label: 'Stock Level', Criticality: level}
-
-        //  {$Type: 'UI.DataField',Value: ID, Label: '{i18n>ID}'},
-        // {$Type: 'UI.DataField',Value: title, Label: '{i18n>Book Title}'},
-        // {$Type: 'UI.DataField',Value: author.name, Label: '{i18n>Author Name}'},
-        // {$Type: 'UI.DataField',Value: author_ID, Label: '{i18n>Author ID}'},
-        // {$Type: 'UI.DataField',Value: stock,Label: '{i18n>Book Stock}'}
 
     ],
     HeaderInfo:{
@@ -38,7 +31,7 @@ UI:{
 
          Facets: [
             {$Type: 'UI.ReferenceFacet', Label: '{i18n>Plan Details}', Target: '@UI.FieldGroup#General'},
-           // { $Type:'UI.ReferenceFacet', Label:'{i18n>}', Target : ''}
+        
         ],
         FieldGroup#General: {
             Data: [
@@ -57,18 +50,18 @@ UI:{
 
 );
 
-annotate PaymentPlanServices.PaymentPlanDetails with {
+annotate AdAgencyServices.PaymentPlanDetails with {
     content @(Common : {
         FieldControl : #Mandatory,
         ValueList    : {
-            CollectionPath  : 'PaymentPlanDetails',
+            CollectionPath  : 'contentDetails',
             Label           : 'PaymentPlan',
             //SearchSupported : true,
             Parameters      : [
                 {
                     $Type             : 'Common.ValueListParameterOut',
                     LocalDataProperty : 'content_ID',
-                    ValueListProperty : 'content_ID',
+                    ValueListProperty : 'content_Id',
                 },
                 {
                     $Type             : 'Common.ValueListParameterDisplayOnly',
@@ -89,18 +82,18 @@ annotate PaymentPlanServices.PaymentPlanDetails with {
     
 }
 
-annotate PaymentPlanServices.PaymentPlanDetails with {
+annotate AdAgencyServices.PaymentPlanDetails with {
      preferences@(Common : {
         FieldControl : #Mandatory,
         ValueList    : {
-            CollectionPath  : 'PaymentPlanDetails',
-            Label           : 'PaymentPlan',
+            CollectionPath  : 'preferences',
+            Label           : 'Payment Plan',
             //SearchSupported : true,
             Parameters      : [
                 {
                     $Type             : 'Common.ValueListParameterOut',
                     LocalDataProperty : 'preferences_ID',
-                    ValueListProperty : 'preferences_ID',
+                    ValueListProperty : 'preference_Id',
                 },
                 {
                     $Type             : 'Common.ValueListParameterDisplayOnly',

@@ -17,13 +17,13 @@ contentCost: String @title : '{i18n>Content Cost}';
 
 }
 
-entity PaymentPlan:cuid,managed
+entity PaymentPlan:cuid
 {
     key PlanId:UUID   @odata.Type:'Edm.String' @title : '{i18n>Plan Id}' @Core.Computed;
    content: association to ContentDetails;
    preferences: association to Preferences;
-   startDate: DateTime @title : '{i18n>Start Date}';
-   endDate: DateTime  @title : '{i18n>End Date}';
+   startDate: Date @title : '{i18n>Start Date}';
+   endDate: Date @title : '{i18n>End Date}';
 
 
 }
