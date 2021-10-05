@@ -7,4 +7,6 @@ service AdDetailService {
     };
     entity Category  as projection on Ad.Category;
 
+    entity GraphicContent as projection on Ad.GraphicContent;
+
 }
